@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Binus Relawan Digital</title>
+
+    <style>
+
+        *{
+            font-family: sans-serif;
+        }
+        body{
+            background-image: url("backgroundBRD.jpg");
+            width: 100%;
+            display: block;
+        }
+
+        .logo img{
+            height: 200px;
+            width: 160px;
+        }
+
+        .box{
+            display: block;
+            background-color: rgba(198, 208, 218, 0.7);
+            width: 80%;
+            margin-left: 10%;
+            text-align: center;
+        }
+
+        .box button:hover{
+            background-color: grey;
+        }
+        .box button:focus{
+            background-color: #008cd0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="BRD.png" alt="Logo">
+    </div>
+
+    <div class="box">
+        <h1 id="judul">REGISTRASI</h1>
+        <input type="text" id="nama" value="" placeholder="Nama Lengkap"> <br><br>
+        <input type="text" id="alamat" value="" placeholder="Alamat"> <br><br>
+        <input type="text" id="email" value="" placeholder="E-mail"> <br> <br>
+        <input type="number" id="noHP" value="" placeholder="Nomor HP"> <br><br>
+        <select id="login">
+            <option value="1" selected>Mahasiswa</option>
+            <option value="2">Dosen</option>
+            <option value="3">Staff Binus</option>
+        </select>
+
+        <h3 id="mediasosialpilihan">Pilih Media Sosial</h3>
+
+        <select id="jenismediasosial">
+            <option id="fb" value="1" selected>Facebook</option>
+            <option id="ig" value="2">Instagram</option>
+            <option id="yt" value="3">YouTube</option>
+            <option id="bg" value="4">Blogger</option>
+        </select> <br><br>
+
+        <input type="text" id="akunmediasosial" value="" placeholder="Account Media Sosial"> <br> <br>
+
+        <button id="submit" onclick="myFunction()">Submit</button>
+
+
+    </div>
+
+    </div>
+
+    <script>
+        function myFunction(){
+            var namaku = document.getElementById("nama").value;
+            var alamatku = document.getElementById("alamat").value;
+            var emailku = document.getElementById("email").value;
+            var noHPku = document.getElementById("noHP").value;
+            var loginku = document.getElementById("login");
+            var loginku2 = loginku.options[loginku.selectedIndex].text;
+            var jenisku = document.getElementById("jenismediasosial");
+            var jenisku2 = jenisku.options[jenisku.selectedIndex].text;
+            var akunku = document.getElementById("akunmediasosial").value;
+
+            document.getElementById("judul").innerHTML = "Selamat Registrasi Anda Berhasil!";
+
+            var kalimatnama = document.getElementById("nama");
+            var ubahkalimatnama = document.createElement("p");
+            ubahkalimatnama.innerHTML = "Nama : " + namaku;
+            kalimatnama.parentNode.replaceChild(ubahkalimatnama,kalimatnama);
+
+            var kalimatalamat = document.getElementById("alamat");
+            var ubahkalimatalamat = document.createElement("p");
+            ubahkalimatalamat.innerHTML = "Alamat : " + alamatku;
+            kalimatalamat.parentNode.replaceChild(ubahkalimatalamat,kalimatalamat);
+
+            var kalimatemail = document.getElementById("email");
+            var ubahkalimatemail = document.createElement("p");
+            ubahkalimatemail.innerHTML = "Email : " + emailku;
+            kalimatemail.parentNode.replaceChild(ubahkalimatemail,kalimatemail);
+
+            var kalimatnoHP = document.getElementById("noHP");
+            var ubahkalimatnoHP = document.createElement("p");
+            ubahkalimatnoHP.innerHTML = "Nomor HP : " + noHPku;
+            kalimatnoHP.parentNode.replaceChild(ubahkalimatnoHP,kalimatnoHP);
+
+            var kalimatlogin = document.getElementById("login");
+            var ubahkalimatlogin = document.createElement("p");
+            ubahkalimatlogin.innerHTML = "Login Sebagai : " + loginku2;
+            kalimatlogin.parentNode.replaceChild(ubahkalimatlogin,kalimatlogin);
+
+            var kalimatjenis = document.getElementById("jenismediasosial");
+            var ubahkalimatjenis = document.createElement("p");
+            ubahkalimatjenis.innerHTML = "Jenis media sosial : " + jenisku2;
+            kalimatjenis.parentNode.replaceChild(ubahkalimatjenis, kalimatjenis);
+
+            var kalimatakun = document.getElementById("akunmediasosial");
+            var ubahkalimatakun = document.createElement("p");
+            ubahkalimatakun.innerHTML = "Akun Sosial Media : " + akunku;
+            kalimatakun.parentNode.replaceChild(ubahkalimatakun,kalimatakun);
+
+            document.getElementById("mediasosialpilihan").remove();
+            document.getElementById("submit").remove();
+        }
+    </script>
+        
+
+   
+</body>
+
+</html>
